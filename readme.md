@@ -24,7 +24,7 @@ The pipeline is about forecasting the sales of a company. The data is from Kaggl
 
 
 ## The data pipeline
-Composed of 4 steps:
+Composed of 3 steps:
 1. Load the dataset (already included in the repo) to GCS (Google Cloud Storage)
 2. Map the GCS data to BigQuery
 3. Run dbt to transform the data
