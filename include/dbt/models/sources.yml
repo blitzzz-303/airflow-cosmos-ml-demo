@@ -1,0 +1,43 @@
+version: 2
+
+sources:
+  - name: retail
+    database: blitzzzz-386418
+    tables:
+      - name: raw_invoices
+      - name: country
+  - name: churn_analysis
+    tags: ['gcs']
+    tables:
+      - name: churn
+        external:
+          location: gs://blitzzz-airflow-test/raw/churn.csv
+          options:
+            format: csv
+            allow_jagged_rows: true
+            allow_quoted_newlines: true
+  - name: sales_forecast
+    schema: source
+    tags: ['gcs']
+    tables:
+      - name: ds2_feature_dataset
+        external:
+          location: gs://blitzzz-airflow-test/raw/ds2_feature_dataset.csv
+          options:
+            format: csv
+            allow_jagged_rows: true
+            allow_quoted_newlines: true
+      - name: ds2_sales_dataset
+        external:
+          location: gs://blitzzz-airflow-test/raw/ds2_sales_dataset.csv
+          options:
+            format: csv
+            allow_jagged_rows: true
+            allow_quoted_newlines: true
+      - name: ds2_store_dataset
+        external:
+          location: gs://blitzzz-airflow-test/raw/ds2_store_dataset.csv
+          options:
+            format: csv
+            allow_jagged_rows: true
+            allow_quoted_newlines: true

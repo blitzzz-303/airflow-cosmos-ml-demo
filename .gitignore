@@ -1,0 +1,13 @@
+.git
+.env
+.DS_Store # macOS specific ignore
+airflow_settings.yaml
+__pycache__/
+astro
+include/gcp/*
+include/soda/configuration.yml
+include/metabase-data/*
+include/dbt/target/*
+include/dbt/dbt_packages/*
+include/dbt/logs/*
+*.log*

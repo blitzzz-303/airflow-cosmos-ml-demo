@@ -1,0 +1,13 @@
+airflow_learn:
+ target: dev
+ outputs:
+  dev:
+    type: bigquery
+    method: service-account
+    keyfile: /opt/airflow/include/gcp/service_account.json
+    project: blitzzzz-386418
+    dataset: airflow
+    threads: 1
+    timeout_seconds: 600
+    location: US
+    threads: 16
